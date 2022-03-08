@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gempa</title>
+    <link rel="shortcut icon" href="https://cdn-icons.flaticon.com/png/512/4357/premium/4357638.png?token=exp=1646752158~hmac=7587979ede5fc9a2f241274fa2915e75">
+</head>
+<body>
+<script>
+    //Class
+    class Gempa {
+        //Variabel Dan Konstruktor
+        constructor(lokasi, skala){
+            this.lokasi = lokasi;
+            this.skala = skala;
+        }
+
+        //Function
+        dampak(){
+            let gempa;
+            if(this.skala == 0 && this.skala <= 2) gempa = "Dampak tidak terasa";
+            else if(this.skala > 2 && this.skala <= 4) gempa = "Bangunan retak-retak";
+            else if(this.skala > 4 && this.skala <= 6) gempa = "Bangunan roboh";
+            else if(this.skala > 6 ) gempa = "Bangunan roboh dan berpotensi tsunami";
+            else gempa = "Tidak terjadi gempa";
+
+            document.write(`
+            Lokasi Gempa: ${this.lokasi}
+            <br/>Skala Gempa: ${this.skala}
+            <br/>Dampak Gempa: ${gempa}<hr/>`  
+            );
+        }
+    }
+
+    //Ciptakan Object
+    let info1 = new Gempa('Bagian Timur Prefektur Kanagawa', 2.4, this.gempa);
+    let info2 = new Gempa('Bagian Tengah Prefektur Yamaguchi', 3.4, this.gempa);
+    let info3 = new Gempa('Lepas Pantai Prefektur Fukushima', 4.0, this.gempa);
+    let info4 = new Gempa('Daerah Noto di Prefektur Ishikawa', 4.8, this.gempa);
+    let info5 = new Gempa('Bagian Selatan Prefektur Chiba', 3.5, this.gempa);
+    let info6 = new Gempa('Daerah Noto di Prefektur Ishikawa', 3.7, this.gempa);
+    let info7 = new Gempa('Lepas Pantai Tokachi', 4.7, this.gempa);
+    let info8 = new Gempa('Daerah Noto di Prefektur Ishikawa', 3.5, this.gempa);
+    let info9 = new Gempa('Lepas Pantai Prefektur Miyagi', 4.2, this.gempa);
+    let info10 = new Gempa('Bagian Selatan Pedalaman di Prefektur Akita', 3.4, this.gempa);
+    //Menggunakan Member Class
+    info1.dampak();
+    info2.dampak();
+    info3.dampak();
+    info4.dampak();
+    info5.dampak();
+    info6.dampak();
+    info7.dampak();
+    info8.dampak();
+    info9.dampak();
+    info10.dampak();
+</script>
+</body>
+</html>
